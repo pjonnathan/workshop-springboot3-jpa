@@ -1,7 +1,7 @@
 package com.startproject.demo.services;
 
-import com.startproject.demo.entity.User;
-import com.startproject.demo.repositores.UserRepository;
+import com.startproject.demo.entity.Order;
+import com.startproject.demo.repositores.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,18 +9,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService {
+public class OrderService {
 
     @Autowired
-    private UserRepository userRepository;
+    private OrderRepository orderRepository;
 
-    public List<User> findAll(){
-        return userRepository.findAll();
+    public List<Order> findAll(){
+        return orderRepository.findAll();
     }
 
-    public User findById(Long id){
-       Optional<User> obj = userRepository.findById(id);
+    public Order findById(Long id){
+       Optional<Order> obj = orderRepository.findById(id);
        return obj.get();
-
     }
 }
